@@ -52,12 +52,13 @@ getAvailablePort(3000).then((port) => {
 
 /* helper ------------------------------------------------------------------- */
 
-function requireNodeVersion(version) {}
-if (parseInt(process.versions.node.split(".")[0]) < version) {
-  console.error(
-    chalk.bgRedBright("Node.js version >= 18 required. exiting now.")
-  );
-  process.exit(1);
+function requireNodeVersion(version) {
+  if (parseInt(process.versions.node.split(".")[0]) < version) {
+    console.error(
+      chalk.bgRedBright("Node.js version >= 18 required. exiting now.")
+    );
+    process.exit(1);
+  }
 }
 
 function logHome(setCookie) {
